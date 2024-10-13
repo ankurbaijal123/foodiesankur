@@ -1,0 +1,55 @@
+/* Coupons.css */
+.custom-dropdown {
+  background-color: white; /* Ensure dropdown has a white background */
+  border: 1px solid #ccc; /* Optional: add a border to the dropdown */
+  border-radius: 4px; /* Optional: rounded corners */
+  padding: 8px; /* Optional: padding inside the dropdown */
+}
+
+.custom-dropdown:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+.coupon-button {
+  transition: background-color 0.3s; /* Smooth transition for hover effects */
+}
+.coupon{
+  margin-right: 30px;
+}
+
+/* Gradient background for buttons */
+.gradient-bg {
+  background: linear-gradient(to right, #FF8C00, #FFD700); /* Gradient from orange to yellow */
+}
+
+/* Button hover effect */
+.coupon-button:hover {
+  opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
+/* Coupons.css */
+.custom-dropdown {
+  background-color: white; /* White background for dropdown */
+  color: black; /* Black text color */
+  border: 1px solid #ccc; /* Optional: add a border to the dropdown */
+  border-radius: 4px; /* Optional: rounded corners */
+  padding: 8px; /* Optional: padding inside the dropdown */
+  font-size: 16px; /* Adjust font size if necessary */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Dropdown options */
+.custom-dropdown option {
+  background-color: white; /* Ensure options have a white background */
+  color: black; /* Ensure options have black text */
+}
+
+/* Remove default focus outline */
+.custom-dropdown:focus {
+  outline: none;
+}
+
+/* Hover effect for dropdown */
+.custom-dropdown:hover {
+  border-color: #999; /* Change border color on hover */
+}
