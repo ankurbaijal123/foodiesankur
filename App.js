@@ -6,7 +6,6 @@ import logo from "./logo.png";
  * Header  
  * - LOGOooo
  * -Nav Items
- *
  * Body
  * - Search
  * - RestuarentContainer
