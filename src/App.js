@@ -1,23 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./style.css";
-import logo from "./logo.png";
-/**
- * Header  
- * - LOGOooo
- * -Nav Items
- * Body
- * - Search
- * - RestuarentContainer
- * - Restuarent Card
- *  ---- Name of Res, Star Rating, cuisine, delivery time
- *
- * Footer
- * - CopyRight
- * -Links
- * -Address
- * -Contact
- */
+import "../style.css";
+import logo from "../logo.png";
+
 
 const resList = [
   {
