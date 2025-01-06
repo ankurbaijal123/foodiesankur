@@ -69,3 +69,11 @@
     padding: 17px;
     margin: 10px;
 }
+
+.filter-btn{
+    cursor: pointer;
+    border-radius: 50px;
+    border-color: blue;
+    background-color: blanchedalmond;
+    border-style: rounded;
+}
