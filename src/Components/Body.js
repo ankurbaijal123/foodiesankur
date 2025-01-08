@@ -7,7 +7,7 @@ const Body = () => {
   const [listOfRestuarents, setListOfRestuarents] = useState([]);
   const [filteredRestuarents, setFilteredRestuarents] = useState([]);
   const [searchtext, Setsearchtext] = useState("");
-  const[btnName, setFilterBtn] = useState("Top Rated Restaurant");
+  const[btnName, setFilterBtn] = useState("Top Rated Restuarant");
 
   //When ever state variable updates, react re renders the component
   // Fetching data from API using Fetch with async await
@@ -76,17 +76,16 @@ const Body = () => {
             const filteredList = listOfRestuarents.filter(
               (restaurant) => restaurant.info.avgRating > 4.3
             );
-            if (btnName === "Top Rated Restaurant") {
-              
-              setFilteredRestuarents(filteredList);
-              setFilterBtn("Top Rated Restaurant  X"); 
-            } else {
-              setFilteredRestuarents(listOfRestuarents); 
-              setFilterBtn("Top Rated Restaurant"); 
+
+            if(btnName==="Top Rated Restuarant" ){
+              setFilteredRestuarents(filteredList)
+            setFilterBtn("Top Rated Restuarent   X")
+            }else{
+              setFilterBtn("Top Rated Restuarant")
+            setFilteredRestuarents(listOfRestuarents)
             }
-          }
             
-        
+          }
         }
         
         >
