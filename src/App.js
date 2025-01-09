@@ -5,13 +5,20 @@ import Body from "./Components/Body"
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
-import {createBrowserRouter, RouterProvider } from "react-router";
+import Contact from "./Components/ContactUs";
+import Error from "./Components/Error";
+import RestuarentMenu from "./Components/RestuarentMenu";
+import {createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet /> {/* for children components */}
+      {/* if path = /   then body*/}
+      {/* if path = /about   then about*/}
+      {/* if path = /contact   then contact*/}
+      {/* resId is dynamic */}
       <Footer />
     </div>
   );
@@ -20,17 +27,28 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />
-  },
-  {
-    path: "/about",
-    element: <About />
-  },
-  {
-    path: "/contact",
-    element: <About />
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/",
+        element: <Body />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path: "/restuarents/:resId", 
+        element: <RestuarentMenu />
+      }
+    ],
+    errorElement:<Error / >
   }
-])
+])  
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

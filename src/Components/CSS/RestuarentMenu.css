@@ -1,0 +1,31 @@
+.offers-section {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .offers-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .offers-list li {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .offers-list li strong {
+    color: #2c3e50;
+  }
+  
+  .offers-list li code {
+    background-color: #eef;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  
