@@ -32,12 +32,12 @@ const RestuarentMenu = () => {
     <div className="restaurant-details">
     <div className="details"> 
       <div className="text-container">
-      <h1>{name}</h1>
+        <h1><b>{name}</b></h1>
         <h3>{locality}</h3>
-        <h3>{city}</h3>
+        <h3>{city} </h3>
         <h4>{costForTwoMessage}</h4>
-        <h4>Average Rating: {avgRating}</h4>
-        <h4>Cuisines: {cuisines?.join(", ")}</h4>
+        <h4>Average Rating: {avgRating} ⭐</h4>
+        <h4>Cuisines: {cuisines?.join(", ")} 🍜</h4>
       </div>
         
         <div className="image-container">

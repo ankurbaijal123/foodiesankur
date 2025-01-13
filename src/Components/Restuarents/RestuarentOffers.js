@@ -2,7 +2,7 @@ import "../CSS/RestuarentMenu.css";
 import "../../../index.css"
 const RestuarentOffers= ({resInfor}) =>{
     const offers =
-    resInfor?.cards[3]?.card?.card?.gridElements?.infoWithindex?.offers?.map(
+    resInfor?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers?.map(
       (off) => off.info
     ) || [];
 

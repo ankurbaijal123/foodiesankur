@@ -10,9 +10,9 @@ export const RestuarentCard = (props) =>{ /* destructuring on the fly  ---> inst
           <img className="res-logo" src={CDN_URL + resData.cloudinaryImageId } alt="logo-res" />
               <h3>{resData.name}</h3>
               <h4>{resData.cuisines.join(', ')}</h4>
-              <h4>{resData.avgRating} stars</h4>
+              <h4>{resData.avgRating} ⭐</h4>
               <h4>{resData.costForTwo}</h4>
-              <h4>{resData.sla.deliveryTime} minutes</h4>
+              <h4>{resData.sla.deliveryTime} minutes 🚚</h4>
           </div>
       )
   }

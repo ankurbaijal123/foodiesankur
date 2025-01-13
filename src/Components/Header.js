@@ -8,25 +8,43 @@ const Header = () => {
   const[btnName, setLoginBtn] = useState("Login");
   const online = useOnlineStatus();
     return (
-      <div className="Header">
-        <div className="logo-container">
-          <img className="app-logo" src={logo} alt="App Logo" />
-        </div>
-        <div className="nav-items">
-          <ul>
-          <li> Online Status: {online ? "🟢": "🔴" }</li>
-            <li> <Link to= "/">Home</Link></li>
-            <li> <Link to= "/about">About</Link></li>
-            <li>Cart</li>
-            <li><Link to="/grocery">Grocery Store</Link></li>
-            <li> <Link to= "/contact">Contact Us</Link></li>
-            <button className="login-button"
-            onClick={() =>{
-              btnName === "Login"?setLoginBtn("Logout") : setLoginBtn("Login")
-            }}>{btnName}</button>
-          </ul>
-        </div>
-      </div>
+      
+      <div className="flex justify-between bg-gray-50 shadow-lg">
+  <div className="logo-container">
+  <Link to="/"><img className="w-24 p-3" src={logo} alt="App Logo" /></Link>
+  </div>
+  <div className="nav-items items-center">
+    <ul className="flex p-4 m-4">
+      <li className="px-4 transition-all duration-300 ease-in-out">
+        Online Status: {online ? "🟢" : "🔴"}
+      </li>
+      <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
+        <Link to="/about">About</Link>
+      </li>
+      <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
+        Cart
+      </li>
+      <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
+        <Link to="/grocery">Grocery Store</Link>
+      </li>
+      <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
+        <Link to="/contact">Contact Us</Link>
+      </li>
+      <button
+        className="login-button px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 shadow-md transition-all"
+        onClick={() => {
+          btnName === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login");
+        }}
+      >
+        {btnName}
+      </button>
+    </ul>
+  </div>
+</div>
+
     );
   };
 

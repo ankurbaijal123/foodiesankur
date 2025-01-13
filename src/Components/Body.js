@@ -22,12 +22,12 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.854995974193432&lng=80.99844921380281&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+
     // Extracting the restaurant list from swiiigggy data
     const restaurants =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-    console.log(restaurants);
+
     if (restaurants) {
       setListOfRestuarents(restaurants);
       setFilteredRestuarents(restaurants);
@@ -46,11 +46,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="search-container">
-        <div className="search">
+      <div className="search-container w-full max-w-4xl">
+        <div className="search m-4 p-4 gap-4 items-center">
           <input
             type="text"
-            className="search-bar"
+            className="search-bar w-full p-2 m-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Search for restaurants..."
             value={searchtext}
             onChange={(e) => {
@@ -58,7 +58,7 @@ const Body = () => {
             }}
           />
           <button
-            className="search-button"
+            className="search-button px-4 py-2 bg-blue-500 text-white font-medium rounded-md hover:bg-gray-200"
             onClick={() => {
               const searched = listOfRestuarents.filter((restaurant) =>
                 restaurant.info.name
@@ -72,12 +72,12 @@ const Body = () => {
               }
             }}
           >
-            Search
+            Search 🔎
           </button>
         </div>
         <br />
         <button
-          className="filter-btn"
+          className="filter-btn px-4 py-2 mx-10 bg-gray-500 text-white font-medium rounded-md hover:bg-gray-200"
           onClick={() => {
             const filteredList = listOfRestuarents.filter(
               (restaurant) => restaurant.info.avgRating > 4.3
@@ -85,7 +85,7 @@ const Body = () => {
 
             if (btnName === "Top Rated Restuarant") {
               setFilteredRestuarents(filteredList);
-              setFilterBtn("Top Rated Restuarent   X");
+              setFilterBtn("Top Rated Restuarant  ✖️");
             } else {
               setFilterBtn("Top Rated Restuarant");
               setFilteredRestuarents(listOfRestuarents);
@@ -96,11 +96,11 @@ const Body = () => {
         </button>
       </div>
 
-      {/* Restaurant Cards */}
+      {/* Restaurant Cards are given data*/}
       <div className="res-container">
         {filteredRestuarents.map((res) => (
-          <Link to={"/restuarents/" + res.info.id} key={res.info.id}>
-            <RestuarentCard resData={res.info} />
+          <Link to={"/restuarents/" + res.info.id}>
+            <RestuarentCard key={res.info.id} resData={res.info} />{" "}
           </Link>
         ))}
       </div>

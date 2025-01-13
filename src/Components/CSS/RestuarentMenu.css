@@ -37,8 +37,7 @@
     flex: 1; /* Allow the text to take up more space */
     max-width: 60%; /* Limit the width of the text content */
   }
-  
-  .text-container h1,
+ 
   .text-container h3,
   .text-container h4 {
     margin: 10px 0; /* Add space between text items */

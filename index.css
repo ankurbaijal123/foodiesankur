@@ -10,47 +10,9 @@ a {
 a:hover {
     text-decoration: none; /* Prevents underline on hover */
 }
-.Header {
-    display: flex;
-    justify-content: space-between; /* Space out items evenly */
-    align-items: center; /* Vertically center the items */
-    border: 1px solid #cccccc; /* Subtle border for a cleaner look */
-    padding: 10px 20px; /* Add padding for better spacing */
-    margin: 20px; /* Consistent spacing outside the header */
-    background-color: #f9f9f9; /* Light background for better contrast */
-    border-radius: 8px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: 'Arial', sans-serif; /* Use a clean, readable font */
-}
-
-/* Optional styles for items inside the header */
-.Header .logo {
-    font-size: 1.5rem; /* Slightly larger font for logo or title */
-    font-weight: bold;
-    color: #333333;
-}
-
-.Header .nav {
-    display: flex;
-    gap: 15px; /* Space between navigation items */
-}
-
-.Header .nav a {
-    text-decoration: none; /* Remove underlines from links */
-    font-size: 1rem;
-    color: #007bff; /* Subtle blue for links */
-    transition: color 0.2s ease; /* Smooth color change on hover */
-}
-
-.Header .nav a:hover {
-    color: #0056b3; /* Darker blue on hover */
-}
 
 
-.app-logo {
-    width: 80px;
-    height: 89px;
-}
+
 
 
 .nav-items > ul {
@@ -65,7 +27,8 @@ a:hover {
 }
 
 .res-card {
-    width: 240px;
+    width: 250px;
+    height: 350px;
     background-color: #ffffff; /* Clean white background */
     padding: 10px;
     margin: 20px;
