@@ -1,3 +1,11 @@
+a {
+    text-decoration: none; /* Removes underline from all links */
+    color: inherit; /* Ensures links inherit text color from parent */
+}
+
+a:hover {
+    text-decoration: none; /* Prevents underline on hover */
+}
 .Header {
     display: flex;
     justify-content: space-between; /* Space out items evenly */
@@ -51,6 +59,7 @@
     padding: 8px;
     margin: 10px;
 }
+
 .res-card {
     width: 240px;
     background-color: #ffffff; /* Clean white background */
@@ -96,6 +105,15 @@
 .res-card h4:last-child {
     color: #ff6b6b; /* Highlight for delivery time or cost */
     font-weight: bold;
+}
+.res-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.res-card a h3,
+.res-card a h4 {
+    text-decoration: none;
 }
 
 .res-container{
@@ -272,4 +290,105 @@ justify-content: center;
 
 .filter{
     display: flex;
+}
+.recommended-img {
+    width: 50%; /* Ensures the image takes the full width of its container */
+    max-width: 100px; /* Prevents the image from becoming too large */
+    height: 100px; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a polished look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    /* Ensures proper alignment */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+/* Hover effect */
+.recommended-img:hover {
+    transform: scale(1.05); /* Slightly enlarges the image */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhances the shadow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .recommended-img {
+        max-width: 100%; /* Adjusts for smaller screens */
+        border-radius: 5px; /* Slightly smaller rounded corners */
+    }
+}
+
+.recommended {
+    padding: 20px;
+  }
+  
+  .recommended-scroll {
+    display: flex; /* Makes items appear in a horizontal row */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 16px; /* Space between items */
+    padding: 10px;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+  }
+  
+  .recommended-scroll::-webkit-scrollbar {
+    height: 8px; /* Horizontal scrollbar height */
+  }
+  
+  .recommended-scroll::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+  }
+  
+  .recommended-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker thumb color on hover */
+  }
+  
+  .recommended-item {
+    flex: 0 0 auto; /* Prevents items from shrinking */
+    text-align: center; /* Centers the text below the image */
+    width: 200px; /* Fixed width for each item */
+  }
+
+  .user-card {
+    position: relative; /* Enable positioning for pseudo-element */
+    width: 240px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff; /* Clean white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align content */
+    z-index: 1; /* Ensure the card is above the pseudo-element */
+    overflow: hidden; /* Prevent pseudo-element overlap */
+}
+
+.user-card::before {
+    content: ""; /* Create a pseudo-element */
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff, #00c6ff); /* Northern lights-inspired gradient */
+    border-radius: 20px; /* Larger radius for the border */
+    z-index: -1; /* Place behind the card */
+    animation: highlight 3s infinite; /* Animation for glowing border */
+}
+
+@keyframes highlight {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.5); /* Brighten the border */
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.user-image {
+    width: 100%; /* Full width for images */
+    height: 240px; /* Fixed height for consistent card size */
+    object-fit: cover; /* Ensure image fits within bounds */
+    border-radius: 8px; /* Slight rounding for images */
+    margin-bottom: 10px; /* Spacing below the image */
 }
