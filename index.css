@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 a {
     text-decoration: none; /* Removes underline from all links */
     color: inherit; /* Ensures links inherit text color from parent */
@@ -264,7 +268,7 @@ justify-content: center;
     font-family: 'Arial', sans-serif; /* Use a clean, readable font */
 }
 
-/* Optional styles for footer sections */
+/* Optional styles for footer sreections */
 .Footer .footer-section {
     flex: 1; /* Allow sections to adjust based on content */
     text-align: center; /* Center-align text inside sections */
@@ -291,61 +295,7 @@ justify-content: center;
 .filter{
     display: flex;
 }
-.recommended-img {
-    width: 50%; /* Ensures the image takes the full width of its container */
-    max-width: 100px; /* Prevents the image from becoming too large */
-    height: 100px; /* Maintains the aspect ratio */
-    border-radius: 10px; /* Adds rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a polished look */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    /* Ensures proper alignment */
-    margin: 0 auto; /* Centers the image horizontally */
-}
 
-/* Hover effect */
-.recommended-img:hover {
-    transform: scale(1.05); /* Slightly enlarges the image */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhances the shadow on hover */
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .recommended-img {
-        max-width: 100%; /* Adjusts for smaller screens */
-        border-radius: 5px; /* Slightly smaller rounded corners */
-    }
-}
-
-.recommended {
-    padding: 20px;
-  }
-  
-  .recommended-scroll {
-    display: flex; /* Makes items appear in a horizontal row */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    gap: 16px; /* Space between items */
-    padding: 10px;
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-  }
-  
-  .recommended-scroll::-webkit-scrollbar {
-    height: 8px; /* Horizontal scrollbar height */
-  }
-  
-  .recommended-scroll::-webkit-scrollbar-thumb {
-    background: #888; /* Scrollbar thumb color */
-    border-radius: 10px; /* Rounded scrollbar thumb */
-  }
-  
-  .recommended-scroll::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker thumb color on hover */
-  }
-  
-  .recommended-item {
-    flex: 0 0 auto; /* Prevents items from shrinking */
-    text-align: center; /* Centers the text below the image */
-    width: 200px; /* Fixed width for each item */
-  }
 
   .user-card {
     position: relative; /* Enable positioning for pseudo-element */

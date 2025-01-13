@@ -6,11 +6,7 @@
     background-color: #f9f9f9;
   }
   
-  .offers-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+  
   
   .offers-list li {
     margin: 10px 0;
@@ -28,4 +24,103 @@
     border-radius: 4px;
     font-family: monospace;
   }
+  
+  .details {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center align content */
+    justify-content: space-between; /* Add space between text and image */
+    gap: 20px; /* Space between text and image */
+    padding: 20px;
+  }
+  
+  .text-container {
+    flex: 1; /* Allow the text to take up more space */
+    max-width: 60%; /* Limit the width of the text content */
+  }
+  
+  .text-container h1,
+  .text-container h3,
+  .text-container h4 {
+    margin: 10px 0; /* Add space between text items */
+  }
+  
+  .image-container {
+    flex: 0 0 auto; /* Prevent the image from growing */
+    max-width: 30%; /* Limit the width of the image */
+    text-align: right; /* Optional: Align the image container to the right */
+  }
+  
+  .restaurant-image {
+    width: 70%; /* Ensure the image fills the container */
+    max-width: 300px; /* Set a max width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visuals */
+  }
+  
+  .recommended-food {
+    padding: 20px;
+  }
+  
+  .recommended-scroll {
+    display: flex; /* Arrange items in a row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Space between items */
+    padding: 10px 0;
+    scroll-behavior: smooth; /* Smooth scrolling experience */
+    -webkit-overflow-scrolling: touch; /* Enhance touch-based scrolling for mobile */
+  }
+  
+  .recommended-scroll::-webkit-scrollbar {
+    height: 8px; /* Set scrollbar height */
+  }
+  
+  .recommended-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light background for the scrollbar track */
+    border-radius: 4px;
+  }
+  
+  .recommended-scroll::-webkit-scrollbar-thumb {
+    background: #888; /* Darker color for the scrollbar thumb */
+    border-radius: 4px;
+  }
+  
+  .recommended-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Change color on hover */
+  }
+  
+  .recommended-item-wrapper {
+    flex: 0 0 auto; /* Prevent items from shrinking or growing */
+    width: 200px; /* Fixed width for each card */
+  }
+  
+  .recommended-item {
+    text-align: center;
+    background-color: #fff; /* Card background */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visuals */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .recommended-item:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  .recommended-img {
+    width: 150px; /* Fixed width for all images */
+    height: 150px; /* Fixed height for all images */
+    border-radius: 8px; /* Rounds the corners */
+    margin-bottom: 10px;
+    object-fit: cover; /* Ensures the image fits within the specified dimensions */
+    box-shadow: 0 4px 6px rgba(20, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition for glowing effect */
+  }
+  
+  .recommended-img:hover {
+    box-shadow: 0 0 15px rgba(50, 54, 54, 0.8); /* Glow effect on hover */
+  }
+  
+  
   

@@ -1,4 +1,4 @@
-import "../../style.css"
+import "../../index.css"
 import me from "../utils/me.jpg"
 import React from "react"
 class UserClass extends React.Component {

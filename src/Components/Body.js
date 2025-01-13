@@ -1,13 +1,15 @@
 import RestuarentCard from "./RestuarentCard";
+import "../../index.css";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [listOfRestuarents, setListOfRestuarents] = useState([]);
   const [filteredRestuarents, setFilteredRestuarents] = useState([]);
   const [searchtext, Setsearchtext] = useState("");
-  const[btnName, setFilterBtn] = useState("Top Rated Restuarant");
+  const [btnName, setFilterBtn] = useState("Top Rated Restuarant");
 
   //When ever state variable updates, react re renders the component
   // Fetching data from API using Fetch with async await
@@ -20,11 +22,12 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.854995974193432&lng=80.99844921380281&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(json);
     // Extracting the restaurant list from swiiigggy data
     const restaurants =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-
+    console.log(restaurants);
     if (restaurants) {
       setListOfRestuarents(restaurants);
       setFilteredRestuarents(restaurants);
@@ -33,7 +36,10 @@ const Body = () => {
       console.error("Failed to fetch restaurant list");
     }
   };
-
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return <h1>Looks like you are Offline !! Grab a maagie till then</h1>;
+  }
   // Contidional Rendering
 
   return listOfRestuarents.length === 0 ? (
@@ -69,7 +75,7 @@ const Body = () => {
             Search
           </button>
         </div>
-            <br />
+        <br />
         <button
           className="filter-btn"
           onClick={() => {
@@ -77,26 +83,25 @@ const Body = () => {
               (restaurant) => restaurant.info.avgRating > 4.3
             );
 
-            if(btnName==="Top Rated Restuarant" ){
-              setFilteredRestuarents(filteredList)
-            setFilterBtn("Top Rated Restuarent   X")
-            }else{
-              setFilterBtn("Top Rated Restuarant")
-            setFilteredRestuarents(listOfRestuarents)
+            if (btnName === "Top Rated Restuarant") {
+              setFilteredRestuarents(filteredList);
+              setFilterBtn("Top Rated Restuarent   X");
+            } else {
+              setFilterBtn("Top Rated Restuarant");
+              setFilteredRestuarents(listOfRestuarents);
             }
-            
-          }
-        }
-        
+          }}
         >
-        {btnName}
+          {btnName}
         </button>
       </div>
 
       {/* Restaurant Cards */}
       <div className="res-container">
         {filteredRestuarents.map((res) => (
-          <Link to={"/restuarents/" + res.info.id}><RestuarentCard key={res.info.id} resData={res.info} /> </Link>
+          <Link to={"/restuarents/" + res.info.id} key={res.info.id}>
+            <RestuarentCard resData={res.info} />
+          </Link>
         ))}
       </div>
     </div>

@@ -1,14 +1,35 @@
-import React from "react";
+import React , {lazy, Suspense, suspense} from "react";
 import ReactDOM from "react-dom/client";
-import "../style.css";
+import "../index.css";
 import Body from "./Components/Body"
 import Header from "./Components/Header";
-import About from "./Components/About";
+//import About from "./Components/About";
+import Shimmer from "./Components/Shimmer";
 import Footer from "./Components/Footer";
 import Contact from "./Components/ContactUs";
 import Error from "./Components/Error";
 import RestuarentMenu from "./Components/RestuarentMenu";
 import {createBrowserRouter, RouterProvider, Outlet } from "react-router";
+
+
+//Chunking
+//Code Splitting
+//Dynamic Bundling
+//On demand Loading
+//Lazy Loading ---> when our app loads then it wll not load 
+//the data for grocery , willbe loaded when i go to that page
+
+//Logical seperation  
+
+const Grocery= lazy(() =>
+  import("./Components/Grocery") 
+);
+
+const About= lazy(() =>
+  import("./Components/About") 
+);
+
+
 
 const AppLayout = () => {
   return (
@@ -31,7 +52,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/about",
-        element: <About />
+        element: (
+          <Suspense fallback={<Shimmer />}>
+        <About />
+        </Suspense>
+        )
       },
       {
         path: "/",
@@ -44,6 +69,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restuarents/:resId", 
         element: <RestuarentMenu />
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+        <Grocery />
+        </Suspense>
+        )
       }
     ],
     errorElement:<Error / >

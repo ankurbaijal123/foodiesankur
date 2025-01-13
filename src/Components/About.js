@@ -1,5 +1,6 @@
 import User from "./User";
 import React from "react"
+import "../../index.css"
 import UserClass from "./UserClass";
 class About extends React.Component{
     constructor(props){

@@ -1,5 +1,5 @@
 import CDN_URL from "../utils/constant";
-
+import "../../index.css"
 export const RestuarentCard = (props) =>{ /* destructuring on the fly  ---> insted of props written we pass the arguments, react wrap 
     them inside a object and pass them to fucntion*/
     /*this destructuring is javascriptc*/
