@@ -9,7 +9,7 @@ const RestuarentOffers= ({resInfor}) =>{
 
 return(
     <div className="offers-section">
-        <h5>Special Offers:</h5>
+        <h5 className="text-black-600 font-semibold text-xl">Special Offers: 💥</h5>
         <ul className="offers-list">
           {offers.map((offer, index) => (
             <li key={index}>

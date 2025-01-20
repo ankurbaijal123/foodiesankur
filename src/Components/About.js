@@ -1,31 +1,35 @@
 import User from "./User";
-import React from "react"
-import "../../index.css"
+import React from "react";
+import "../../index.css";
 import UserClass from "./UserClass";
-class About extends React.Component{
-    constructor(props){
-        super(props)
-        console.log("Parent Constructor")
-    }
+import UserContext from "../utils/UserContext";
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("Parent Constructor");
+  }
 
-    componentDidMount(){
-        console.log("Parent Mount")
-    }
+  componentDidMount() {
+    console.log("Parent Mount");
+  }
 
-    render(){
-        console.log("Parent Render")
-        return(
-            <>
-            <center>
-            <UserClass name={"First"}/>
-            {/*<UserClass name={"Second"}/>
+  render() {
+    console.log("Parent Render");
+    return (
+      <>
+        <center>
+          <div>
+            <UserContext.Consumer>
+              {({loggedInUser}) => <h2>{loggedInUser}</h2>}
+            </UserContext.Consumer>
+          </div>
+          <UserClass name={"First"} />
+          {/*<UserClass name={"Second"}/>
             <UserClass name={"Third"}/> */}
-            </center>
-            
-            </>
-            )
-    }
+        </center>
+      </>
+    );
+  }
 }
-
 
 export default About;

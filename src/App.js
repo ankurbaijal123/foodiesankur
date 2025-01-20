@@ -1,4 +1,4 @@
-import React , {lazy, Suspense, suspense} from "react";
+import React , {lazy, Suspense, suspense, useEffect} from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css";
 import Body from "./Components/Body"
@@ -11,6 +11,7 @@ import Contact from "./Components/ContactUs";
 import Error from "./Components/Error";
 import RestuarentMenu from "./Components/RestuarentMenu";
 import {createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import UserContext from "./utils/UserContext";
 
 
 //Chunking
@@ -33,7 +34,18 @@ const About= lazy(() =>
 
 
 const AppLayout = () => {
+
+  const [userName, setUserName] = useState();
+
+  useEffect(() =>{
+    const data = {
+      name: "Ankur Baijal"
+    }
+    setUserName(data.name)
+  }, [])
+
   return (
+    <UserContext.Provider value ={{loggedInUser: userName}}>
     <div className="app">
       <Header />
       <Outlet /> {/* for children components */}
@@ -43,6 +55,7 @@ const AppLayout = () => {
       {/* resId is dynamic */}
       <Footer />
     </div>
+    </UserContext.Provider>
   );
 };
 

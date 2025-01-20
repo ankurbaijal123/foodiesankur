@@ -14,7 +14,7 @@ const RestuarentFood = ({ resInfo }) => {
 
   return (
     <div className="restaurant-food">
-      <h3>Recommended By Ankur 💙:</h3>
+      <h3 className="text-blue-700 font-semibold text-xl">Recommended By Ankur 💙:</h3>
       <div className="recommended-scroll">
         {items.map((item, index) => {
           const imageId = item.dish?.info?.imageId || item.card?.info?.imageId;
