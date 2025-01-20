@@ -10,26 +10,33 @@ const RestuarentFood = ({ resInfo }) => {
   if (!items || items.length === 0) {
     return <p>No items available to display.</p>;
   }
+  console.log(items)
 
   return (
     <div className="restaurant-food">
-      <h3>More Items:</h3>
+      <h3>Recommended By Ankur 💙:</h3>
       <div className="recommended-scroll">
         {items.map((item, index) => {
           const imageId = item.dish?.info?.imageId || item.card?.info?.imageId;
           const name = item.dish?.info?.name || item.card?.info?.name || "Unnamed Item";
-          const price = (item.dish?.info?.price || item.card?.info?.price || 0) * 0.01;
-
+          const price = (item.dish?.info?.price ?  item.dish?.info?.price/100 : item.dish?.info?.defaultPrice/100) || (item.card?.info?.price ?  item.card?.info?.price/100 : item.card?.info?.defaultPrice/100)
+          
+   
+          
           return (
             <div key={index} className="recommended-item-wrapper">
               <div className="recommended-item">
+              <div className="recommended-img-container">
                 <img
                   className="recommended-img"
                   src={CDN_URL + imageId}
                   alt={name}
                 />
+                </div>
                 <p>{name}</p>
-                <p>{price.toFixed(2)} Rs.</p>
+                <p>
+                  {price ? `${price} Rs.` : null}
+                </p>
               </div>
             </div>
           );

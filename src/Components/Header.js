@@ -9,7 +9,7 @@ const Header = () => {
   const online = useOnlineStatus();
     return (
       
-      <div className="flex justify-between bg-gray-50 shadow-lg">
+  <div className="flex justify-between bg-gray-50 shadow-lg sg:bg-gray-70 lg:bg-gray-200">
   <div className="logo-container">
   <Link to="/"><img className="w-24 p-3" src={logo} alt="App Logo" /></Link>
   </div>

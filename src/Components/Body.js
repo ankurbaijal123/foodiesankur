@@ -1,4 +1,4 @@
-import RestuarentCard from "./RestuarentCard";
+import RestuarentCard, {openornot} from "./RestuarentCard";
 import "../../index.css";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
@@ -10,6 +10,8 @@ const Body = () => {
   const [filteredRestuarents, setFilteredRestuarents] = useState([]);
   const [searchtext, Setsearchtext] = useState("");
   const [btnName, setFilterBtn] = useState("Top Rated Restuarant");
+
+  const RestuarentOpen = openornot(RestuarentCard);
 
   //When ever state variable updates, react re renders the component
   // Fetching data from API using Fetch with async await
@@ -36,6 +38,9 @@ const Body = () => {
       console.error("Failed to fetch restaurant list");
     }
   };
+
+  console.log(listOfRestuarents)
+
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return <h1>Looks like you are Offline !! Grab a maagie till then</h1>;
@@ -55,6 +60,9 @@ const Body = () => {
             value={searchtext}
             onChange={(e) => {
               Setsearchtext(e.target.value);
+              if (e.target.value == "") {
+                setFilteredRestuarents(listOfRestuarents);
+              }
             }}
           />
           <button
@@ -99,13 +107,16 @@ const Body = () => {
       {/* Restaurant Cards are given data*/}
       <div className="res-container">
         {filteredRestuarents.map((res) => (
-          <Link to={"/restuarents/" + res.info.id}>
-            <RestuarentCard key={res.info.id} resData={res.info} />{" "}
+          <Link key={res.info.id} to={"/restuarents/" + res.info.id}>
+          {/* Here higher order component is used to show the label open now */}
+          {/*res?.info?.isOpen ? <RestuarentOpen resData={res.info} /> : <RestuarentCard  resData={res.info} /> */}
+          <RestuarentCard  resData={res.info} />
+            
           </Link>
         ))}
       </div>
     </div>
   );
 };
-
+ 
 export default Body;

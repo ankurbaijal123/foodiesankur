@@ -8,13 +8,30 @@ export const RestuarentCard = (props) =>{ /* destructuring on the fly  ---> inst
       return(
           <div className="res-card">
           <img className="res-logo" src={CDN_URL + resData.cloudinaryImageId } alt="logo-res" />
-              <h3>{resData.name}</h3>
+              <h2>{resData.name}</h2>
               <h4>{resData.cuisines.join(', ')}</h4>
               <h4>{resData.avgRating} ⭐</h4>
-              <h4>{resData.costForTwo}</h4>
+              <h4>{resData.costForTwo} </h4>
               <h4>{resData.sla.deliveryTime} minutes 🚚</h4>
+            
           </div>
-      )
+      )/*  <h4>{resData.isOpen ? "Open Now" : "Closed"}</h4> */
+  }
+
+
+
+  //Higher order Component 
+  // input ===> Restuarent Card ===> Open or not
+  export const openornot= (RestuarentCard) =>{
+    return (props) => {
+        return( 
+            <>
+            <label className="absolute bg-black text-white m-1 p-1 rounded-lg">
+    Open Now </label>
+            <RestuarentCard {...props}/>
+            </>
+        ) 
+    }
   }
 
   export default RestuarentCard;

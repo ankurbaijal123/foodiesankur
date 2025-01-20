@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "../index.css";
 import Body from "./Components/Body"
 import Header from "./Components/Header";
+import Yo from "./Components/Yo";
 //import About from "./Components/About";
 import Shimmer from "./Components/Shimmer";
 import Footer from "./Components/Footer";
@@ -80,6 +81,9 @@ const appRouter = createBrowserRouter([
       }
     ],
     errorElement:<Error / >
+  }, {
+    path: "/yo",
+    element: <Yo />,
   }
 ])  
 
