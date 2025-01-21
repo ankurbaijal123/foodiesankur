@@ -20,7 +20,7 @@ class About extends React.Component {
         <center>
           <div>
             <UserContext.Consumer>
-              {({loggedInUser}) => <h2>{loggedInUser}</h2>}
+              {({loggedInUser}) => <h2>{loggedInUser} is Viewing About Page</h2>}
             </UserContext.Consumer>
           </div>
           <UserClass name={"First"} />

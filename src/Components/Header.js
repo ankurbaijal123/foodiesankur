@@ -11,7 +11,7 @@ const Header = () => {
   const {loggedInUser} = useContext(UserContext);
   console.log(loggedInUser)
 
-
+ 
     return(
       
   <div className="flex justify-between bg-gray-50 shadow-lg sg:bg-gray-70 lg:bg-gray-200">

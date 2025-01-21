@@ -1,4 +1,5 @@
-import React , {lazy, Suspense, suspense, useEffect} from "react";
+import React , {lazy, Suspense, suspense, useContext, useEffect} from "react";
+import { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css";
 import Body from "./Components/Body"
@@ -34,8 +35,8 @@ const About= lazy(() =>
 
 
 const AppLayout = () => {
-
-  const [userName, setUserName] = useState();
+  const {loggedInUser} = useContext(UserContext)
+  const [userName, setUserName] = useState(loggedInUser);
 
   useEffect(() =>{
     const data = {
@@ -45,7 +46,7 @@ const AppLayout = () => {
   }, [])
 
   return (
-    <UserContext.Provider value ={{loggedInUser: userName}}>
+    <UserContext.Provider value ={{loggedInUser: userName, setUserName}}>
     <div className="app">
       <Header />
       <Outlet /> {/* for children components */}

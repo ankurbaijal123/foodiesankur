@@ -1,10 +1,12 @@
 import RestuarentCard, {openornot} from "./RestuarentCard";
 import "../../index.css";
 import resList from "../utils/mockData";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+
 const Body = () => {
   const [listOfRestuarents, setListOfRestuarents] = useState([]);
   const [filteredRestuarents, setFilteredRestuarents] = useState([]);
@@ -12,7 +14,7 @@ const Body = () => {
   const [btnName, setFilterBtn] = useState("Top Rated Restuarant");
 
   const RestuarentOpen = openornot(RestuarentCard);
-
+  const {loggedInUser, setUserName} = useContext(UserContext)
   //When ever state variable updates, react re renders the component
   // Fetching data from API using Fetch with async await
   useEffect(() => {
@@ -103,6 +105,19 @@ const Body = () => {
           {btnName}
         </button>
       </div>
+
+      {/* <div>
+      
+      <label>UserName : </label>
+      <input 
+      className="border border-black p-2" 
+      type="search" 
+      value={loggedInUser}
+      onChange={(e) => setUserName(e.target.value)}
+      >
+      
+      </input>
+      </div> */} 
 
       {/* Restaurant Cards are given data*/}
       <div className="res-container">
