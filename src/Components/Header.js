@@ -30,7 +30,7 @@ const Header = () => {
         <Link to="/about">About</Link>
       </li>
       <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
-        Cart
+        Cart 🛒
       </li>
       <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
         <Link to="/contact">Contact Us</Link>

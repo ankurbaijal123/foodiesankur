@@ -5,7 +5,6 @@ import "../index.css";
 import Body from "./Components/Body"
 import Header from "./Components/Header";
 import Yo from "./Components/Yo";
-//import About from "./Components/About";
 import Shimmer from "./Components/Shimmer";
 import Footer from "./Components/Footer";
 import Contact from "./Components/ContactUs";
@@ -13,10 +12,12 @@ import Error from "./Components/Error";
 import RestuarentMenu from "./Components/RestuarentMenu";
 import {createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import UserContext from "./utils/UserContext";
+import { Provider  } from "react-redux";
+import appStore from "./utils/Store/appStore";
 
 
 //Chunking
-//Code Splitting
+//Code Splitting 
 //Dynamic Bundling
 //On demand Loading
 //Lazy Loading ---> when our app loads then it wll not load 
@@ -46,6 +47,7 @@ const AppLayout = () => {
   }, [])
 
   return (
+    <Provider store= {appStore}>
     <UserContext.Provider value ={{loggedInUser: userName, setUserName}}>
     <div className="app">
       <Header />
@@ -57,6 +59,8 @@ const AppLayout = () => {
       <Footer />
     </div>
     </UserContext.Provider>
+    
+    </Provider>
   );
 };
 
