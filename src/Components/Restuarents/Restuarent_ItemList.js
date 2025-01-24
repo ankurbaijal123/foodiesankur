@@ -1,9 +1,19 @@
+import { useDispatch } from "react-redux";
 import CDN_URL from "../../utils/constant"
+import { addItem } from "../../utils/Redux/cartSlice";
 
 const Restuarent_ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem =(item) =>{
+    //Dispatch an action
+    dispatch(addItem(item))
+    alert(`${item?.card?.info?.name || "Item"} has been added to the cart!`);
+    // redux will create an object and also create payload inside object
+  }
 
   return (
-    <>
+    <> 
       {items.map((item) => (
         <div
   key={item.card.info.id}
@@ -30,10 +40,14 @@ const Restuarent_ItemList = ({ items }) => {
     alt={item.card.info.name}
     className="w-30 h-20 object-cover rounded m-1"
   />
-  <button className="p-1 bg-white shadow-lg text-xs absolute bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg">
+  <button className="p-1 bg-white shadow-lg text-xs absolute bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"
+  onClick={() => handleAddItem(item)}>
     Add ➕ 
   </button>
 </div>
+{/* onClick={handleAddItem}	On button click	No
+onClick={handleAddItem(item)}	During render	Yes (immediately)
+onClick={() => handleAddItem(item)}	On button click	Yes */}
 
 
 </div>
