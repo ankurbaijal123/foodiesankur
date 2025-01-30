@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const[btnName, setLoginBtn] = useState("Login");
   const online = useOnlineStatus();
-  const {loggedInUser} = useContext(UserContext);
+
   // console.log(loggedInUser)
 
   //Subscribing to the store using Selector
@@ -19,6 +19,18 @@ const Header = () => {
   )) 
 
   console.log(cartItems)
+
+  const {loggedInUser, setUserName} = useContext(UserContext);
+  
+  const handleLogin = () =>{
+    setLoginBtn("Login")
+    setUserName("Default User")
+  }
+
+  const handleLogout = () =>{
+    setLoginBtn("Logout")
+    setUserName(loggedInUser)
+  }
 
  
     return(
@@ -44,20 +56,22 @@ const Header = () => {
       <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
         <Link to="/contact">Contact Us</Link>
       </li>
-      <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
+      {/* <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-300 ease-in-out">
         <Link to="/grocery">Grocery Store</Link>
-      </li>
+      </li> */}
       <button
         className="login-button px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 shadow-md transition-all"
         onClick={() => {
-          btnName === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login");
+          btnName === "Logout" ? setLoginBtn("Login") : setLoginBtn("Logout");
+          
+          
         }}
       >
         {btnName}
       </button>
       <li className="px-4 hover:text-blue-500 hover:scale-105 transition-all duration-200 ease-in-out font-bold">
-        Hi! {loggedInUser}
-      </li>
+  {btnName === "Logout" ? `Hi! ${loggedInUser}` : `Hi! Default User`}
+</li>
 
       
     </ul>

@@ -1,14 +1,18 @@
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 import CDN_URL from "../../utils/constant"
 import { addItem } from "../../utils/Redux/cartSlice";
 
 const Restuarent_ItemList = ({ items }) => {
   const dispatch = useDispatch();
 
+  const cartItems = useSelector((store) =>(
+    store.cart.items
+  )) 
+
   const handleAddItem =(item) =>{
     //Dispatch an action
     dispatch(addItem(item))
-    alert(`${item?.card?.info?.name || "Item"} has been added to the cart!`);
+    alert(`${cartItems.length + 1}  Item has been added to the cart!`);
     // redux will create an object and also create payload inside object
   }
 
@@ -26,8 +30,8 @@ const Restuarent_ItemList = ({ items }) => {
       <span className="ml-2">
         ₹
         {item.card.info.price
-          ? item.card.info.price / 100
-          : item.card.info.defaultPrice / 100}
+          ? item.card.info.price / 100 
+          : item.card.info.defaultPrice / 100} 
       </span>
     </div>
     {item.card.info.description && (
@@ -38,7 +42,7 @@ const Restuarent_ItemList = ({ items }) => {
   <img
     src={CDN_URL + item.card.info.imageId}
     alt={item.card.info.name}
-    className="w-30 h-20 object-cover rounded m-1"
+    className="w-50 h-40 object-cover rounded m-1"
   />
   <button className="p-1 bg-white shadow-lg text-xs absolute bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"
   onClick={() => handleAddItem(item)}>

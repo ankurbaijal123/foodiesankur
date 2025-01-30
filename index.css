@@ -262,7 +262,7 @@ justify-content: center;
 
   .user-card {
     position: relative; /* Enable positioning for pseudo-element */
-    width: 270px;
+    width: 400px;
     padding: 10px;
     margin: 20px;
     border-radius: 10px; /* Rounded corners */
@@ -299,9 +299,10 @@ justify-content: center;
 }
 
 .user-image {
-    width: 100%; /* Full width for images */
+    width: 80%; /* Full width for images */
     height: 240px; /* Fixed height for consistent card size */
     object-fit: cover; /* Ensure image fits within bounds */
     border-radius: 8px; /* Slight rounding for images */
     margin-bottom: 10px; /* Spacing below the image */
+    align-items: center;
 }

@@ -32,12 +32,17 @@ class UserClass extends React.Component {
         //console.log(this.props.name + "Render")
         return (
             <div className="user-card">
+                    <center>
                     <img className="user-image" src={me} />
+                    </center>
     
                     <h2>Name: {name}</h2>
-                    <h3>Location: {location}</h3>
-                    <h4>Conatct: {html_url}</h4>
-                    <h4>I am currently learning React by exploring various hooks and integrating live APIs to build dynamic and interactive applications.</h4>
+                    <h3>Location: {location} 🙏</h3>
+                    <h4>Conatct: {html_url} 😎</h4>
+                    <br />
+                    <h5 className="font-semibold">The Foodies App is designed to connect food enthusiasts with restaurants, cafes, and food delivery services. It provides a platform to explore diverse cuisines, order food seamlessly.</h5>
+                    <br />
+                    <h4 className="font-bold">About the Developer: I am currently learning React by exploring various hooks and integrating live APIs to build dynamic and interactive applications.</h4>
                     <h5>Made using React Class Based Components</h5>
                     </div>
         )

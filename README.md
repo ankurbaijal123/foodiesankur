@@ -24,4 +24,16 @@
  * - Dispatch the action
  * - Selector - Subscribed Phenomena
 
+ #Testing
+ * - Unit Testing
+ * - Integration Testing
+ * - End to End Testing (E2E)
+ * - Configure Parcel Config to disable default Babel transpilation
+ * - Jest Configration
+ * - Install jsdom library
+ * - Install @babel/preset-react, add to babel - preset react
+ * - Include @babel/preset-react
+ * - Install @testing-library/jest-dom
+  
+
  

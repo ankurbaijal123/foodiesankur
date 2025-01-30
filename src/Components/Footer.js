@@ -8,14 +8,9 @@ const Footer = () => {
       </div>
       <div className="flex justify-center md:justify-end">
         <ul className="flex space-x-6 text-gray-600">
-          <li className="hover:text-blue-500 transition duration-300 cursor-pointer">
-            Home
-          </li>
-          <li className="hover:text-blue-500 transition duration-300 cursor-pointer">
-            Career
-          </li>
-          <li className="hover:text-blue-500 transition duration-300 cursor-pointer">
-            Contact Us
+         
+          <li className="text-purple-800 ">
+            All rights reserved ©️
           </li>
           <li className="text-red-500 transition duration-300 ">
           <h4>Made with ❤️ </h4>
