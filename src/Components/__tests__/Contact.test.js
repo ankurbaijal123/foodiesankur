@@ -34,7 +34,7 @@ describe("Contact Us Page test case", () => {
         expect(button).toBeInTheDocument();
     
         const mssg = screen.getAllByRole("textbox")
-        console.log(mssg)
+        //console.log(mssg)
     
     
     })

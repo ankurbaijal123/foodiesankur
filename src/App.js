@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import "../index.css";
 import Body from "./Components/Body";
 import Header from "./Components/Header";
-//import Yo from "./Components/Yo";
+import Yo from "./Components/Yo";
 import Shimmer from "./Components/Shimmer";
 import Footer from "./Components/Footer";
 import Contact from "./Components/ContactUs";
@@ -104,10 +104,10 @@ const appRouter = createBrowserRouter([
     ],
     errorElement: <Error />,
   },
-  {/* {
+  {
     path: "/yo",
     element: <Yo />,
-  }, */}
+  },  
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

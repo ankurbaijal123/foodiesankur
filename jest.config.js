@@ -146,6 +146,8 @@ const config = {
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
+"setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -196,3 +198,10 @@ const config = {
 };
 
 module.exports = config;
+
+// module.exports = {
+//   testEnvironment: "jsdom",
+//   moduleNameMapper: {
+//     "\\.(png|jpg|jpeg|gif|svg)$": "<rootDir>/__mocks__/fileMock.js"
+//   }
+// };

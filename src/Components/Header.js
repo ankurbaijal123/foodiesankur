@@ -1,7 +1,6 @@
 import logo from "../../logo.png";
 import { useEffect, useState, useContext } from "react"; 
 import {Link} from "react-router";
-import "../../index.css"
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
@@ -17,8 +16,6 @@ const Header = () => {
   const cartItems = useSelector((store) =>(
     store.cart.items
   )) 
-
-  console.log(cartItems)
 
   const {loggedInUser, setUserName} = useContext(UserContext);
   

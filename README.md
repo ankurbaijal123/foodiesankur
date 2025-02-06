@@ -33,7 +33,11 @@
  * - Install jsdom library
  * - Install @babel/preset-react, add to babel - preset react
  * - Include @babel/preset-react
- * - Install @testing-library/jest-dom
-  
+ * - Install 
+ 
+
+ * - Integration Testing
+* - Test the feature of search
+   
 
  
