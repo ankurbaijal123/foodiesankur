@@ -1,5 +1,5 @@
 import RestuarentCard, {openornot} from "./RestuarentCard";
-import "../../index.css";
+//import "../../index.css";
 import resList from "../utils/mockData";
 import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -41,7 +41,7 @@ const Body = () => {
     }
   };
 
-  console.log(listOfRestuarents)
+
 
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
@@ -56,6 +56,7 @@ const Body = () => {
       <div className="search-container w-full max-w-4xl">
         <div className="search m-4 p-4 gap-4 items-center">
           <input
+            data-testid="searchInput"
             type="text"
             className="search-bar w-full p-2 m-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
             placeholder="Search for restaurants..."
@@ -120,7 +121,7 @@ const Body = () => {
       </div> */} 
 
       {/* Restaurant Cards are given data*/}
-      <div className="res-container">
+      <div data-testid= "resCard" className="res-container">
         {filteredRestuarents.map((res) => (
           <Link key={res.info.id} to={"/restuarents/" + res.info.id}>
           {/* Here higher order component is used to show the label open now */}

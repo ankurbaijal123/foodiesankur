@@ -1,4 +1,4 @@
-import "../../index.css";
+//import "../../index.css";
 
 const Shimmer = () =>{
     return <div className="shimmer-container">

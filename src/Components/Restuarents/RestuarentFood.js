@@ -3,8 +3,6 @@ import "../../../index.css";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../utils/Redux/cartSlice";
 
-
-
 const RestuarentFood = ({ resInfo }) => {
 
 

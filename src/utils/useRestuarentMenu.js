@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import "../../index.css"
+//import "../../index.css"
 import { RES_URL } from "./constant";
 const useRestuarentMenu = (resId) =>{
     const[resInfo, setResInfo] = useState(null)

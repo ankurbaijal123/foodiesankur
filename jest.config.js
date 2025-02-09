@@ -147,6 +147,9 @@ const config = {
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
 "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+moduleNameMapper: {
+    "\\.(css|less|sass|scss)$": "<rootDir>/jest-css-mock.js"
+  },
 
 
   // Options that will be passed to the testEnvironment
