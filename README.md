@@ -57,7 +57,3 @@ Tests search functionality and Redux state updates
 -✅ End-to-End (E2E) Testing
 Simulates real user interactions
 Verifies the complete user flow
-
----
----
-
