@@ -32,10 +32,16 @@
 
 ---
 
-## 🚀 Getting Started  
-
 ### 📌 Prerequisites  
 Make sure you have **Node.js** and **npm** installed on your system.  
+
+### ScreenShots
+![image](https://github.com/user-attachments/assets/b42fa371-1171-4c0a-a008-36c40394cf6c)
+![image](https://github.com/user-attachments/assets/176c297a-5655-4c0f-88e5-60a69a170aac)
+![image](https://github.com/user-attachments/assets/c7ff61eb-a4d5-494b-a6b3-ed913bd1287a)
+![image](https://github.com/user-attachments/assets/6d3beb56-2ea0-4ded-90a9-e21a8b352d7d)
+![image](https://github.com/user-attachments/assets/420725c8-91f2-4b00-abae-461ad94bfde4)
+![image](https://github.com/user-attachments/assets/379a911c-6307-448d-9516-84569bc205ef)
 
 #### 1️⃣ Clone the Repository  
 ```sh
@@ -54,14 +60,4 @@ Verifies the complete user flow
 
 ---
 ---
-
-###ScreenShots
-![image](https://github.com/user-attachments/assets/b42fa371-1171-4c0a-a008-36c40394cf6c)
-![image](https://github.com/user-attachments/assets/176c297a-5655-4c0f-88e5-60a69a170aac)
-![image](https://github.com/user-attachments/assets/c7ff61eb-a4d5-494b-a6b3-ed913bd1287a)
-![image](https://github.com/user-attachments/assets/6d3beb56-2ea0-4ded-90a9-e21a8b352d7d)
-![image](https://github.com/user-attachments/assets/420725c8-91f2-4b00-abae-461ad94bfde4)
-![image](https://github.com/user-attachments/assets/379a911c-6307-448d-9516-84569bc205ef)
-
-
 
