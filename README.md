@@ -52,6 +52,9 @@ Tests search functionality and Redux state updates
 Simulates real user interactions
 Verifies the complete user flow
 
+---
+---
+
 ###ScreenShots
 ![image](https://github.com/user-attachments/assets/b42fa371-1171-4c0a-a008-36c40394cf6c)
 ![image](https://github.com/user-attachments/assets/176c297a-5655-4c0f-88e5-60a69a170aac)
