@@ -43,6 +43,11 @@ Make sure you have **Node.js** and **npm** installed on your system.
 ![image](https://github.com/user-attachments/assets/420725c8-91f2-4b00-abae-461ad94bfde4)
 ![image](https://github.com/user-attachments/assets/379a911c-6307-448d-9516-84569bc205ef)
 
+
+https://github.com/user-attachments/assets/b68738aa-d397-490e-a321-d57e4d9a3e08
+
+
+
 #### 1️⃣ Clone the Repository  
 ```sh
 git clone https://github.com/ankurbaijal123/foodiesankur.git
